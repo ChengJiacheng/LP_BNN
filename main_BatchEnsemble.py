@@ -18,6 +18,37 @@ import datetime
 import numpy as np
 from networks import *
 from torch.autograd import Variable
+
+from pynvml import *
+import PIL
+def getEnvInfo():
+    print("PyTorch Version: ", torch.__version__)
+    print("Torchvision Version: ", torchvision.__version__)
+    print("Pillow Version: ", PIL.Image.__version__)
+
+    print("Let's use", torch.cuda.device_count(), "GPUs!")
+    nvmlInit()
+    deviceCount = nvmlDeviceGetCount()  
+    for i in range(deviceCount):
+        handle = nvmlDeviceGetHandleByIndex(i)
+        print("Device", i, ":", nvmlDeviceGetName(handle))
+
+class Logger(object):
+    def __init__(self, log_path="default.log"):
+        self.terminal = sys.stdout
+        self.log = open(log_path, "w", buffering=1)
+ 
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)  
+
+    def flush(self):
+        self.terminal.flush()
+        self.log.flush()
+ 
+    def close(self):
+        self.log.close()
+
 class CutoutDefault(object):
     """
     Reference : https://github.com/quark0/darts/blob/master/cnn/utils.py
@@ -145,8 +176,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='PyTorch CIFAR-10 Training')
     parser.add_argument('--lr', default=0.1, type=float, help='learning_rate')
     #parser.add_argument('--net_type', default='wide-resnet', type=str, help='model') # the code works just with wideresnet for now
-    parser.add_argument('--depth', default=28, type=int, help='depth of model')
-    parser.add_argument('--widen_factor', default=10, type=int, help='width of model')
+    parser.add_argument('--depth', default=16, type=int, help='depth of model')
+    parser.add_argument('--widen_factor', default=8, type=int, help='width of model')
     parser.add_argument('--dropout', default=0.3, type=float, help='dropout_rate')
     parser.add_argument('--dataset', default='cifar10', type=str, help='dataset = [cifar10/cifar100]')
     parser.add_argument('--dirsave_out', default='batch_ensemble', type=str, help='where the checkpoint are save. ./checkpoint/dataset/dirsave_out')
@@ -162,11 +193,25 @@ if __name__ == '__main__':
     best_acc = 0
     start_epoch, num_epochs, batch_size, optim_type = cf.start_epoch, cf.num_epochs, cf.batch_size, cf.optim_type
     # batch_size=128#128
-    batch_size=16
+    batch_size=64
     # Data Uplaod
     cutout=16
     
-    
+    import sys, os, socket
+
+    output_folder = socket.gethostname()
+
+    # os.makedirs(opt.folder, exist_ok=True)
+    os.makedirs(output_folder, exist_ok=True)
+    log_file = os.path.join(output_folder, 'log.out')
+
+    sys.stdout = Logger(log_file)
+    sys.stderr = Logger(log_file)  # redirect std err, if necessary
+
+    from pprint import pprint
+    pprint(vars(args))
+    getEnvInfo()
+
     print('\n[Phase 1] : Data Preparation')
     transform_train = transforms.Compose([
         transforms.RandomCrop(32, padding=4),
@@ -184,14 +229,14 @@ if __name__ == '__main__':
     if(args.dataset == 'cifar10'):
         print("| Preparing CIFAR-10 dataset...")
         sys.stdout.write("| ")
-        trainset = torchvision.datasets.CIFAR10(root='\datasets', train=True, download=True, transform=transform_train)
-        testset = torchvision.datasets.CIFAR10(root='\dataset', train=False, download=True, transform=transform_test)
+        trainset = torchvision.datasets.CIFAR10(root='/datasets', train=True, download=True, transform=transform_train)
+        testset = torchvision.datasets.CIFAR10(root='/dataset', train=False, download=True, transform=transform_test)
         num_classes = 10
     elif(args.dataset == 'cifar100'):
         print("| Preparing CIFAR-100 dataset...")
         sys.stdout.write("| ")
-        trainset = torchvision.datasets.CIFAR100(root='\dataset', train=True, download=True, transform=transform_train)
-        testset = torchvision.datasets.CIFAR100(root='\dataset', train=False, download=True, transform=transform_test)
+        trainset = torchvision.datasets.CIFAR100(root='/dataset', train=True, download=True, transform=transform_train)
+        testset = torchvision.datasets.CIFAR100(root='/dataset', train=False, download=True, transform=transform_test)
         num_classes = 100
     
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=2)

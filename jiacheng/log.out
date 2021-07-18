@@ -1,0 +1,118 @@
+{'dataset': 'cifar10',
+ 'depth': 16,
+ 'dirsave_out': 'batch_ensemble',
+ 'dropout': 0.3,
+ 'lr': 0.1,
+ 'resume': False,
+ 'testOnly': False,
+ 'widen_factor': 8}
+PyTorch Version:  1.7.1
+Torchvision Version:  0.8.2
+Pillow Version:  7.0.0
+Let's use 1 GPUs!
+Device 0 : b'GeForce GTX 1080'
+
+[Phase 1] : Data Preparation
+| Preparing CIFAR-10 dataset...
+| Files already downloaded and verified
+Files already downloaded and verified
+
+[Phase 2] : Model setup
+| Building net type [wide-resnet BE]...
+| Wide-Resnet 16x8
+
+[Phase 3] : Training model
+| Training Epochs = 250
+| Initial Learning Rate = 0.1
+| Optimizer = SGD
+name module.conv1.alpha
+name module.conv1.gamma
+name module.conv1.bias
+name module.conv1.conv.weight
+name module.layer1.0.bn1.weight
+name module.layer1.0.bn1.bias
+name module.layer1.0.conv1.alpha
+name module.layer1.0.conv1.gamma
+name module.layer1.0.conv1.bias
+name module.layer1.0.conv1.conv.weight
+name module.layer1.0.bn2.weight
+name module.layer1.0.bn2.bias
+name module.layer1.0.conv2.alpha
+name module.layer1.0.conv2.gamma
+name module.layer1.0.conv2.bias
+name module.layer1.0.conv2.conv.weight
+name module.layer1.0.shortcut.0.weight
+name module.layer1.0.shortcut.0.bias
+name module.layer1.1.bn1.weight
+name module.layer1.1.bn1.bias
+name module.layer1.1.conv1.alpha
+name module.layer1.1.conv1.gamma
+name module.layer1.1.conv1.bias
+name module.layer1.1.conv1.conv.weight
+name module.layer1.1.bn2.weight
+name module.layer1.1.bn2.bias
+name module.layer1.1.conv2.alpha
+name module.layer1.1.conv2.gamma
+name module.layer1.1.conv2.bias
+name module.layer1.1.conv2.conv.weight
+name module.layer2.0.bn1.weight
+name module.layer2.0.bn1.bias
+name module.layer2.0.conv1.alpha
+name module.layer2.0.conv1.gamma
+name module.layer2.0.conv1.bias
+name module.layer2.0.conv1.conv.weight
+name module.layer2.0.bn2.weight
+name module.layer2.0.bn2.bias
+name module.layer2.0.conv2.alpha
+name module.layer2.0.conv2.gamma
+name module.layer2.0.conv2.bias
+name module.layer2.0.conv2.conv.weight
+name module.layer2.0.shortcut.0.weight
+name module.layer2.0.shortcut.0.bias
+name module.layer2.1.bn1.weight
+name module.layer2.1.bn1.bias
+name module.layer2.1.conv1.alpha
+name module.layer2.1.conv1.gamma
+name module.layer2.1.conv1.bias
+name module.layer2.1.conv1.conv.weight
+name module.layer2.1.bn2.weight
+name module.layer2.1.bn2.bias
+name module.layer2.1.conv2.alpha
+name module.layer2.1.conv2.gamma
+name module.layer2.1.conv2.bias
+name module.layer2.1.conv2.conv.weight
+name module.layer3.0.bn1.weight
+name module.layer3.0.bn1.bias
+name module.layer3.0.conv1.alpha
+name module.layer3.0.conv1.gamma
+name module.layer3.0.conv1.bias
+name module.layer3.0.conv1.conv.weight
+name module.layer3.0.bn2.weight
+name module.layer3.0.bn2.bias
+name module.layer3.0.conv2.alpha
+name module.layer3.0.conv2.gamma
+name module.layer3.0.conv2.bias
+name module.layer3.0.conv2.conv.weight
+name module.layer3.0.shortcut.0.weight
+name module.layer3.0.shortcut.0.bias
+name module.layer3.1.bn1.weight
+name module.layer3.1.bn1.bias
+name module.layer3.1.conv1.alpha
+name module.layer3.1.conv1.gamma
+name module.layer3.1.conv1.bias
+name module.layer3.1.conv1.conv.weight
+name module.layer3.1.bn2.weight
+name module.layer3.1.bn2.bias
+name module.layer3.1.conv2.alpha
+name module.layer3.1.conv2.gamma
+name module.layer3.1.conv2.bias
+name module.layer3.1.conv2.conv.weight
+name module.bn1.weight
+name module.bn1.bias
+name module.linear.alpha
+name module.linear.gamma
+name module.linear.bias
+name module.linear.fc.weight
+
+=> Training Epoch #1, LR=0.1000
+| Epoch [  1/250] Iter[  1/782]		Loss: 2.3128 Acc@1: 10.156%| Epoch [  1/250] Iter[  2/782]		Loss: 2.6478 Acc@1: 13.672%| Epoch [  1/250] Iter[  3/782]		Loss: 3.0923 Acc@1: 11.719%| Epoch [  1/250] Iter[  4/782]		Loss: 2.5328 Acc@1: 11.621%| Epoch [  1/250] Iter[  5/782]		Loss: 2.8191 Acc@1: 12.734%| Epoch [  1/250] Iter[  6/782]		Loss: 2.8155 Acc@1: 12.891%| Epoch [  1/250] Iter[  7/782]		Loss: 2.7916 Acc@1: 13.281%| Epoch [  1/250] Iter[  8/782]		Loss: 2.8251 Acc@1: 13.184%| Epoch [  1/250] Iter[  9/782]		Loss: 2.5297 Acc@1: 13.151%| Epoch [  1/250] Iter[ 10/782]		Loss: 2.5127 Acc@1: 12.773%| Epoch [  1/250] Iter[ 11/782]		Loss: 2.3006 Acc@1: 13.175%| Epoch [  1/250] Iter[ 12/782]		Loss: 2.4382 Acc@1: 13.118%| Epoch [  1/250] Iter[ 13/782]		Loss: 2.3843 Acc@1: 12.831%| Epoch [  1/250] Iter[ 14/782]		Loss: 2.2556 Acc@1: 13.002%| Epoch [  1/250] Iter[ 15/782]		Loss: 2.3757 Acc@1: 13.203%| Epoch [  1/250] Iter[ 16/782]		Loss: 2.3395 Acc@1: 12.964%| Epoch [  1/250] Iter[ 17/782]		Loss: 2.6713 Acc@1: 12.799%| Epoch [  1/250] Iter[ 18/782]		Loss: 2.6053 Acc@1: 12.522%| Epoch [  1/250] Iter[ 19/782]		Loss: 2.7161 Acc@1: 12.356%| Epoch [  1/250] Iter[ 20/782]		Loss: 2.5529 Acc@1: 12.754%| Epoch [  1/250] Iter[ 21/782]		Loss: 2.6738 Acc@1: 12.667%| Epoch [  1/250] Iter[ 22/782]		Loss: 2.3012 Acc@1: 12.518%| Epoch [  1/250] Iter[ 23/782]		Loss: 2.4278 Acc@1: 12.653%| Epoch [  1/250] Iter[ 24/782]		Loss: 2.4414 Acc@1: 12.712%| Epoch [  1/250] Iter[ 25/782]		Loss: 2.3115 Acc@1: 12.609%| Epoch [  1/250] Iter[ 26/782]		Loss: 2.2689 Acc@1: 12.785%| Epoch [  1/250] Iter[ 27/782]		Loss: 2.3773 Acc@1: 12.717%| Epoch [  1/250] Iter[ 28/782]		Loss: 2.3470 Acc@1: 12.709%| Epoch [  1/250] Iter[ 29/782]		Loss: 2.3219 Acc@1: 12.648%| Epoch [  1/250] Iter[ 30/782]		Loss: 2.3492 Acc@1: 12.643%| Epoch [  1/250] Iter[ 31/782]		Loss: 2.2960 Acc@1: 12.588%| Epoch [  1/250] Iter[ 32/782]		Loss: 2.2008 Acc@1: 12.537%| Epoch [  1/250] Iter[ 33/782]		Loss: 2.2538 Acc@1: 12.642%| Epoch [  1/250] Iter[ 34/782]		Loss: 2.3425 Acc@1: 12.592%| Epoch [  1/250] Iter[ 35/782]		Loss: 2.3755 Acc@1: 12.679%| Epoch [  1/250] Iter[ 36/782]		Loss: 2.2784 Acc@1: 12.674%| Epoch [  1/250] Iter[ 37/782]		Loss: 2.2673 Acc@1: 12.584%| Epoch [  1/250] Iter[ 38/782]		Loss: 2.3187 Acc@1: 12.623%| Epoch [  1/250] Iter[ 39/782]		Loss: 2.2803 Acc@1: 12.500%| Epoch [  1/250] Iter[ 40/782]		Loss: 2.3902 Acc@1: 12.549%| Epoch [  1/250] Iter[ 41/782]		Loss: 2.2591 Acc@1: 12.691%| Epoch [  1/250] Iter[ 42/782]		Loss: 2.2522 Acc@1: 12.677%| Epoch [  1/250] Iter[ 43/782]		Loss: 2.1385 Acc@1: 12.863%| Epoch [  1/250] Iter[ 44/782]		Loss: 2.0640 Acc@1: 13.210%| Epoch [  1/250] Iter[ 45/782]		Loss: 2.1383 Acc@1: 13.498%| Epoch [  1/250] Iter[ 46/782]		Loss: 2.1400 Acc@1: 13.646%| Epoch [  1/250] Iter[ 47/782]		Loss: 2.2686 Acc@1: 13.821%| Epoch [  1/250] Iter[ 48/782]		Loss: 2.1476 Acc@1: 14.022%| Epoch [  1/250] Iter[ 49/782]		Loss: 2.4123 Acc@1: 13.919%| Epoch [  1/250] Iter[ 50/782]		Loss: 2.1665 Acc@1: 14.109%| Epoch [  1/250] Iter[ 51/782]		Loss: 2.1152 Acc@1: 14.200%| Epoch [  1/250] Iter[ 52/782]		Loss: 2.2547 Acc@1: 14.498%| Epoch [  1/250] Iter[ 53/782]		Loss: 2.3149 Acc@1: 14.460%| Epoch [  1/250] Iter[ 54/782]		Loss: 2.4107 Acc@1: 14.366%| Epoch [  1/250] Iter[ 55/782]		Loss: 2.2006 Acc@1: 14.389%| Epoch [  1/250] Iter[ 56/782]		Loss: 2.1114 Acc@1: 14.523%| Epoch [  1/250] Iter[ 57/782]		Loss: 2.1427 Acc@1: 14.570%| Epoch [  1/250] Iter[ 58/782]		Loss: 2.1505 Acc@1: 14.534%| Epoch [  1/250] Iter[ 59/782]		Loss: 2.1804 Acc@1: 14.493%| Epoch [  1/250] Iter[ 60/782]		Loss: 2.2780 Acc@1: 14.512%| Epoch [  1/250] Iter[ 61/782]		Loss: 2.0472 Acc@1: 14.613%| Epoch [  1/250] Iter[ 62/782]		Loss: 2.1216 Acc@1: 14.711%| Epoch [  1/250] Iter[ 63/782]		Loss: 1.9792 Acc@1: 14.974%| Epoch [  1/250] Iter[ 64/782]		Loss: 2.2348 Acc@1: 14.984%| Epoch [  1/250] Iter[ 65/782]		Loss: 2.1323 Acc@1: 15.018%| Epoch [  1/250] Iter[ 66/782]		Loss: 2.2087 Acc@1: 14.933%| Epoch [  1/250] Iter[ 67/782]		Loss: 2.3046 Acc@1: 14.896%| Epoch [  1/250] Iter[ 68/782]		Loss: 2.1347 Acc@1: 14.976%| Epoch [  1/250] Iter[ 69/782]		Loss: 2.0946 Acc@1: 15.036%| Epoch [  1/250] Iter[ 70/782]		Loss: 2.2295 Acc@1: 15.067%| Epoch [  1/250] Iter[ 71/782]		Loss: 2.0859 Acc@1: 15.163%| Epoch [  1/250] Iter[ 72/782]		Loss: 2.1201 Acc@1: 15.186%| Epoch [  1/250] Iter[ 73/782]		Loss: 2.2640 Acc@1: 15.127%| Epoch [  1/250] Iter[ 74/782]		Loss: 2.2029 Acc@1: 15.176%| Epoch [  1/250] Iter[ 75/782]		Loss: 2.1900 Acc@1: 15.234%| Epoch [  1/250] Iter[ 76/782]		Loss: 2.1044 Acc@1: 15.260%| Epoch [  1/250] Iter[ 77/782]		Loss: 2.3475 Acc@1: 15.285%| Epoch [  1/250] Iter[ 78/782]		Loss: 2.1978 Acc@1: 15.330%| Epoch [  1/250] Iter[ 79/782]		Loss: 2.1563 Acc@1: 15.294%| Epoch [  1/250] Iter[ 80/782]		Loss: 2.0907 Acc@1: 15.415%| Epoch [  1/250] Iter[ 81/782]		Loss: 2.2040 Acc@1: 15.398%| Epoch [  1/250] Iter[ 82/782]		Loss: 2.1464 Acc@1: 15.401%| Epoch [  1/250] Iter[ 83/782]		Loss: 2.1371 Acc@1: 15.479%| Epoch [  1/250] Iter[ 84/782]		Loss: 2.2344 Acc@1: 15.555%| Epoch [  1/250] Iter[ 85/782]		Loss: 2.2430 Acc@1: 15.483%
